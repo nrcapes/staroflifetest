@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="DkB-BL-t3k"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main View" id="L8a-d4-y7q">
-                        <barButtonItem key="rightBarButtonItem" title="Main Menu" id="nBs-8Z-qud">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="nBs-8Z-qud">
                             <connections>
                                 <action selector="mainMenuTapped:" destination="mz3-SU-cD5" id="CmP-o6-9xv"/>
                             </connections>
