@@ -29,9 +29,9 @@
 import UIKit
 
 class sideCell: UITableViewCell {
-  @IBOutlet weak var title: UILabel!
-  
-    override func awakeFromNib() {
+
+  @IBOutlet weak var label: UILabel!
+  override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -41,5 +41,5 @@ class sideCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

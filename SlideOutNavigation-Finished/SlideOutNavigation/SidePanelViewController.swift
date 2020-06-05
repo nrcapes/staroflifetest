@@ -28,8 +28,8 @@
 
 import UIKit
 
-class SidePanelViewController: UIViewController {
-  @IBOutlet weak var tableView: UITableView!
+class SidePanelViewController: UITableViewController {
+ // @IBOutlet weak var tableView: UITableView!
   
   var delegate: SidePanelViewControllerDelegate?
   var sections = ["Dispatch", "Patient"]
@@ -39,14 +39,22 @@ class SidePanelViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    registerCell()
     tableView.reloadData()
   }
+  func registerCell(){
+    let cell = UINib(nibName: "sideCell",
+                           bundle: nil)
+    self.tableView.register(cell,
+             forCellReuseIdentifier: "sideCell")  }
 }
 
+
 // MARK: Table View Data Source
-extension SidePanelViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension SidePanelViewController {
+  
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     var count : Int
     switch section {
     case 0 :
@@ -58,7 +66,8 @@ extension SidePanelViewController: UITableViewDataSource {
     }
     return count
   }
-  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+ 
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     var title = ""
     switch section {
     case 0:
@@ -70,26 +79,21 @@ extension SidePanelViewController: UITableViewDataSource {
     }
     return title
   }
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell", for: indexPath)
-    switch indexPath.section {
-    case 0:
-      cell.textLabel?.text = dispatchRows[indexPath.row]
-    case 1 :
-      cell.textLabel?.text = patientDetailRows[indexPath.row]
-    default:
-      cell.textLabel?.text = "*"
-    }
-   
-    return cell
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell") as? sideCell else {
+          return UITableViewCell()
+      }
+      
+      cell.label.text = "Test \(indexPath.row)"
+      
+      return cell
   }
-}
 func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 2 // number of required sections
 }// Mark: Table View Delegate
-
-extension SidePanelViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+}
+extension SidePanelViewController{
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     var animal = "*"
     switch indexPath.section {
     case 0:

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5394F02321864DF4006E754C /* LaunchScreen.storyboard */; };
+		94217A02248AF00100CE9B68 /* sideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94217A00248AF00100CE9B68 /* sideCell.swift */; };
+		94217A03248AF00100CE9B68 /* sideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94217A01248AF00100CE9B68 /* sideCell.xib */; };
 		AF2771C921F786610022AD94 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2771C621F786610022AD94 /* CenterViewController.swift */; };
 		AF2771CA21F786610022AD94 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2771C721F786610022AD94 /* ContainerViewController.swift */; };
 		AF2771CD21F786860022AD94 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2771CB21F786860022AD94 /* SidePanelViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		5394F02421864DF4006E754C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		94217A00248AF00100CE9B68 /* sideCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sideCell.swift; sourceTree = "<group>"; };
+		94217A01248AF00100CE9B68 /* sideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = sideCell.xib; sourceTree = "<group>"; };
 		AF2771C221F785CC0022AD94 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		AF2771C621F786610022AD94 /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		AF2771C721F786610022AD94 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				AF2771C221F785CC0022AD94 /* Animal.swift */,
 				D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */,
 				D2A5F2071F4A9144005CD714 /* Main.storyboard */,
+				94217A00248AF00100CE9B68 /* sideCell.swift */,
+				94217A01248AF00100CE9B68 /* sideCell.xib */,
 				5394F02321864DF4006E754C /* LaunchScreen.storyboard */,
 				D2A5F20A1F4A9144005CD714 /* Assets.xcassets */,
 				D2A5F20F1F4A9144005CD714 /* Info.plist */,
@@ -135,6 +141,7 @@
 			files = (
 				5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */,
 				D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */,
+				94217A03248AF00100CE9B68 /* sideCell.xib in Resources */,
 				D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
+				94217A02248AF00100CE9B68 /* sideCell.swift in Sources */,
 				AF2771CD21F786860022AD94 /* SidePanelViewController.swift in Sources */,
 				AF2771CA21F786610022AD94 /* ContainerViewController.swift in Sources */,
 				AF2771C921F786610022AD94 /* CenterViewController.swift in Sources */,
