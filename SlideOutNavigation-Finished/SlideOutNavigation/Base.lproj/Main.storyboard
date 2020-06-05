@@ -75,14 +75,14 @@
                         <viewLayoutGuide key="safeArea" id="DkB-BL-t3k"/>
                     </view>
                     <navigationItem key="navigationItem" title="Main View" id="L8a-d4-y7q">
-                        <barButtonItem key="leftBarButtonItem" title="Kitties" id="tpN-Xh-zBE">
+                        <barButtonItem key="leftBarButtonItem" title="Second Menu" id="tpN-Xh-zBE">
                             <connections>
-                                <action selector="kittiesTapped:" destination="mz3-SU-cD5" id="Dap-wh-5z1"/>
+                                <action selector="secondMenuTapped:" destination="mz3-SU-cD5" id="jsv-kC-GXw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Puppies" id="nBs-8Z-qud">
+                        <barButtonItem key="rightBarButtonItem" title="Main Menu" id="nBs-8Z-qud">
                             <connections>
-                                <action selector="puppiesTapped:" destination="mz3-SU-cD5" id="31C-jV-Z8g"/>
+                                <action selector="mainMenuTapped:" destination="mz3-SU-cD5" id="CmP-o6-9xv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
