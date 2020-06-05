@@ -33,9 +33,7 @@ class CenterViewController: UIViewController {
   var delegate: CenterViewControllerDelegate?
   
   // MARK: Button actions  
-  @IBAction func secondMenuTapped(_ sender: Any) {
-    delegate?.toggleLeftPanel()
-  }
+  
   
   @IBAction func mainMenuTapped(_ sender: Any) {
     delegate?.toggleRightPanel()
