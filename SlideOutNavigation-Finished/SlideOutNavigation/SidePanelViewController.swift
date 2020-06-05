@@ -32,9 +32,9 @@ class SidePanelViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var delegate: SidePanelViewControllerDelegate?
-  
-  var rows = ["*"]
-  
+  var sections = ["Dispatch", "Patient Detail"]
+  var dispatchRows = ["*"]
+  var patientDetailRows = ["*"]
   
   
   override func viewDidLoad() {
@@ -47,21 +47,48 @@ class SidePanelViewController: UIViewController {
 // MARK: Table View Data Source
 extension SidePanelViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return rows.count
+    var count : Int
+    switch section {
+    case 0 :
+      count = dispatchRows.count
+    case 1 :
+      count = patientDetailRows.count
+    default:
+      count = 0
+    }
+    return count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell", for: indexPath)
-    cell.textLabel?.text = rows[indexPath.row]
+    switch indexPath.section {
+    case 0:
+      cell.textLabel?.text = dispatchRows[indexPath.row]
+    case 1 :
+      cell.textLabel?.text = patientDetailRows[indexPath.row]
+    default:
+      cell.textLabel?.text = "*"
+    }
+   
     return cell
   }
 }
-
-// Mark: Table View Delegate
+func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 2 // number of required sections
+}// Mark: Table View Delegate
 
 extension SidePanelViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let animal = rows[indexPath.row]
+    var animal = "*"
+    switch indexPath.section {
+    case 0:
+      animal = dispatchRows[indexPath.row]
+    case 1 :
+      animal = patientDetailRows[indexPath.row]
+    default:
+      animal = "*"
+    }
+   
     delegate?.didSelectAnimal(animal)
   }
 }
