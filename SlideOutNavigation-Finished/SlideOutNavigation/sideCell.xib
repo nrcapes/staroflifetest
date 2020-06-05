@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oz0-LI-JNE">
-                        <rect key="frame" x="16" y="12" width="288" height="21"/>
+                        <rect key="frame" x="200" y="12" width="104" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Oz0-LI-JNE" secondAttribute="trailing" constant="16" id="Hx7-6N-5Aq"/>
-                    <constraint firstItem="Oz0-LI-JNE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IDB-q0-Hqi"/>
-                    <constraint firstItem="Oz0-LI-JNE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="N4i-8f-odb"/>
-                    <constraint firstAttribute="bottom" secondItem="Oz0-LI-JNE" secondAttribute="bottom" constant="11" id="sfH-QT-rtw"/>
+                    <constraint firstAttribute="bottom" secondItem="Oz0-LI-JNE" secondAttribute="bottom" constant="11" id="LDm-ZX-AIa"/>
+                    <constraint firstAttribute="trailing" secondItem="Oz0-LI-JNE" secondAttribute="trailing" constant="16" id="oAp-aU-P4K"/>
+                    <constraint firstItem="Oz0-LI-JNE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="qnk-bn-Cby"/>
+                    <constraint firstItem="Oz0-LI-JNE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="200" id="qpl-YP-LQw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

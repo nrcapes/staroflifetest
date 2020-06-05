@@ -31,6 +31,7 @@ import UIKit
 class SidePanelViewController: UITableViewController {
  // @IBOutlet weak var tableView: UITableView!
   
+  
   var delegate: SidePanelViewControllerDelegate?
   var sections = ["Dispatch", "Patient"]
   var dispatchRows = ["Dispatch"]
@@ -54,43 +55,40 @@ class SidePanelViewController: UITableViewController {
 extension SidePanelViewController {
   
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    var count : Int
-    switch section {
-    case 0 :
-      count = dispatchRows.count
-    case 1 :
-      count = patientDetailRows.count
-    default:
-      count = 0
-    }
-    return count
-  }
- 
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    var title = ""
-    switch section {
-    case 0:
-      title = "Dispatch"
-    case 1 :
-      title = "Patient"
-    default:
-      title = "*"
-    }
-    return title
-  }
+  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell") as? sideCell else {
-          return UITableViewCell()
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell") as? sideCell else {
+      return UITableViewCell()
+    }
+    switch indexPath.section{
+    case 0 :
+      switch indexPath.row {
+      case 0:
+        cell.label.text = "Dispatch Time"
+      case 1:
+        cell.label.text = "On Site Time"
+      default:
+        cell.label.text = "*"
+      }
+    case 1 :
+      switch indexPath.row {
+      case 0:
+        cell.label.text = "Patient Name"
+      case 1:
+        cell.label.text = "Patient Address"
+        
+      default:
+        cell.label.text = "*"
       }
       
+    default:
       cell.label.text = "Test \(indexPath.row)"
-      
-      return cell
+    }
+    
+    
+    return cell
   }
-func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 2 // number of required sections
-}// Mark: Table View Delegate
+
 }
 extension SidePanelViewController{
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
