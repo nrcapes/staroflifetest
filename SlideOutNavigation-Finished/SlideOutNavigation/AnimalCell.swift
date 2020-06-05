@@ -28,7 +28,7 @@
 
 import UIKit
 
-class AnimalCell: UITableViewCell {
+class sideCell: UITableViewCell {
   
   @IBOutlet weak var title: UILabel!
   

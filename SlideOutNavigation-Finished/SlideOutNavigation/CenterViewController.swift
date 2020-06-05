@@ -41,7 +41,7 @@ class CenterViewController: UIViewController {
 }
 
 extension CenterViewController: SidePanelViewControllerDelegate {
-  func didSelectAnimal(_ animal: Animal) {
+  func didSelectAnimal(_ animal: String) {
     
     
     delegate?.collapseSidePanels()

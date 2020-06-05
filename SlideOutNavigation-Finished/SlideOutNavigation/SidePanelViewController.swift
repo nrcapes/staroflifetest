@@ -33,11 +33,9 @@ class SidePanelViewController: UIViewController {
   
   var delegate: SidePanelViewControllerDelegate?
   
-  var animals: [Animal]!
+  var rows = ["*"]
   
-  enum CellIdentifiers {
-    static let AnimalCell = "AnimalCell"
-  }
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,12 +47,12 @@ class SidePanelViewController: UIViewController {
 // MARK: Table View Data Source
 extension SidePanelViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return rows.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.AnimalCell, for: indexPath) as! AnimalCell
-    cell.configureForAnimal(animals[indexPath.row])
+    let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell", for: indexPath)
+    cell.textLabel?.text = rows[indexPath.row]
     return cell
   }
 }
@@ -63,11 +61,11 @@ extension SidePanelViewController: UITableViewDataSource {
 
 extension SidePanelViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let animal = animals[indexPath.row]
+    let animal = rows[indexPath.row]
     delegate?.didSelectAnimal(animal)
   }
 }
 
 protocol SidePanelViewControllerDelegate {
-  func didSelectAnimal(_ animal: Animal)
+  func didSelectAnimal(_ animal: String)
 }

@@ -101,7 +101,7 @@ extension ContainerViewController: CenterViewControllerDelegate {
     guard leftViewController == nil else { return }
 
     if let vc = UIStoryboard.leftViewController() {
-      vc.animals = Animal.allCats()
+      
       addChildSidePanelController(vc)
       leftViewController = vc
     }
@@ -135,7 +135,7 @@ extension ContainerViewController: CenterViewControllerDelegate {
     guard rightViewController == nil else { return }
     
     if let vc = UIStoryboard.rightViewController() {
-      vc.animals = Animal.allDogs()
+      
       addChildSidePanelController(vc)
       rightViewController = vc
     }
