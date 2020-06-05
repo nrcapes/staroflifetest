@@ -49,7 +49,7 @@ class SidePanelViewController: UIViewController {
 // MARK: Table View Data Source
 extension SidePanelViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return animals.count
+    return 1
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
