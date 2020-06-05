@@ -32,9 +32,9 @@ class SidePanelViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var delegate: SidePanelViewControllerDelegate?
-  var sections = ["Dispatch", "Patient Detail"]
-  var dispatchRows = ["*"]
-  var patientDetailRows = ["*"]
+  var sections = ["Dispatch", "Patient"]
+  var dispatchRows = ["Dispatch"]
+  var patientDetailRows = ["Patient Details"]
   
   
   override func viewDidLoad() {
@@ -58,7 +58,18 @@ extension SidePanelViewController: UITableViewDataSource {
     }
     return count
   }
-  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    var title = ""
+    switch section {
+    case 0:
+      title = "Dispatch"
+    case 1 :
+      title = "Patient"
+    default:
+      title = "*"
+    }
+    return title
+  }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "sideCell", for: indexPath)
     switch indexPath.section {

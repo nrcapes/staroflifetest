@@ -49,7 +49,7 @@ extension CenterViewController: SidePanelViewControllerDelegate {
 }
 
 protocol CenterViewControllerDelegate {
-  func toggleLeftPanel()
+//  func toggleLeftPanel()
   func toggleRightPanel()
   func collapseSidePanels()
 }
